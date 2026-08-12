@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - J N V Sai Kumar</title>
+  <style>
+    :root {
+      --primary: #1e293b;
+      --secondary: #0f766e;
+      --text: #334155;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+      background-color: var(--bg);
+      padding: 40px 20px;
+    }
+
+    .resume-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border);
+    }
+
+    /* Print styling */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+      .resume-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    header {
+      border-bottom: 3px solid var(--secondary);
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 25px;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .contact-info a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: 16px;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+
+    .objective-text {
+      font-size: 14.5px;
+      color: var(--text);
+    }
+
+    .experience-item {
+      margin-bottom: 15px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .job-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    .company-name {
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 14.5px;
+    }
+
+    .dates {
+      font-size: 13.5px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+    }
+
+    .skill-item {
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--primary);
+    }
+
+    .education-item {
+      margin-bottom: 12px;
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 14.5px;
+    }
+
+    .education-sub {
+      font-size: 13.5px;
+      color: var(--text-light);
+    }
+
+    .declaration-text {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-light);
+    }
+
+    /* Print Floating Button */
+    .print-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--secondary);
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(15, 118, 110, 0.3);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .print-btn:hover {
+      background-color: #0d5c56;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">
+    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+      <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+    </svg>
+    Save / Print PDF
+  </button>
+
+  <div class="resume-container">
+    <header>
+      <h1>J N V Sai Kumar</h1>
+      <div class="contact-info">
+        <span><strong>Mobile:</strong> <a href="tel:+919398622512">+91 9398622512</a></span>
+        <span><strong>Email:</strong> <a href="mailto:saikumarjayanthi6@gmail.com">saikumarjayanthi6@gmail.com</a></span>
+        <span><strong>Location:</strong> Kakinada, India</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Career Objective</h2>
+      <p class="objective-text">
+        To pursue a challenging career and be a part of a dynamic organization in which I work, by elevating my professional and technical skills.
+      </p>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+      <div class="experience-item">
+        <div class="item-header">
+          <div>
+            <span class="job-title">GIS Engineer</span><br>
+            <span class="company-name">Destin Cs Pvt Ltd</span>
+          </div>
+          <span class="dates">January 2025 – December 2025</span>
+        </div>
+        <ul>
+          <li>Collected and processed spatial data using GPS, satellite imagery, and survey inputs.</li>
+          <li>Created and updated GIS databases including vector and raster datasets.</li>
+          <li>Developed thematic maps, utility maps, and asset maps using ArcGIS/QGIS.</li>
+          <li>Performed spatial analysis (buffering, overlay, network analysis) for project insights.</li>
+          <li>Ensured geo-referencing accuracy and coordinate system standardization.</li>
+          <li>Conducted data quality checks and validation to maintain high accuracy levels.</li>
+          <li>Generated reports, dashboards, and visual presentations for clients.</li>
+          <li>Coordinated with survey teams and project managers for data integration.</li>
+          <li>Provided technical support and documentation for GIS workflows.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">Bootstrap</div>
+        <div class="skill-item">React</div>
+        <div class="skill-item">jQuery</div>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">GitHub</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Academic Qualification</h2>
+      <div class="education-item">
+        <div class="education-header">
+          <span>BSc Computers</span>
+          <span>Graduated 2024</span>
+        </div>
+        <div class="education-sub">Aditya Degree College (Affiliated to Adikavi Nannaya University)</div>
+        <div class="education-sub">Grade: 7.5 CGPA</div>
+      </div>
+
+      <div class="education-item">
+        <div class="education-header">
+          <span>Intermediate (M.P.C)</span>
+          <span>Completed 2021</span>
+        </div>
+        <div class="education-sub">Narayana Junior College (Board of Intermediate Education)</div>
+        <div class="education-sub">Grade: 5.9 CGPA</div>
+      </div>
+
+      <div class="education-item">
+        <div class="education-header">
+          <span>S.S.C</span>
+          <span>Completed 2019</span>
+        </div>
+        <div class="education-sub">Sri Vivekananda School (Board of Secondary Education)</div>
+        <div class="education-sub">Grade: 9.5 GPA</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Declaration</h2>
+      <p class="declaration-text">
+        I hereby declare that the above-mentioned details are true to the best of my knowledge and belief.
+      </p>
+    </section>
+  </div>
+
+</body>
+</html>
